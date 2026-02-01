@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMind | AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+</head>
+<body class="dark-theme"> <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MediMind RAG</span>
+            </div>
+            <button id="theme-toggle" class="sidebar-btn">
+                <i class="fas fa-moon"></i> Theme
+            </button>
+            <div class="disclaimer">
+                <p><strong>Note:</strong> This AI provides information from uploaded medical PDFs. Always consult a professional.</p>
+            </div>
+        </nav>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <h2>Medical Query Assistant</h2>
+                <span class="status-badge">System Online</span>
+            </header>
+
+            <div id="chat-window" class="chat-window">
+                <div class="message ai-message">
+                    Hello! I am your RAG-powered medical assistant. How can I help you today?
+                </div>
+            </div>
+
+            <div id="loading" class="loading-overlay">
+                <div class="spinner"></div>
+                <span>Analyzing Medical Records...</span>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Ask about symptoms, treatments, or records..." autocomplete="off">
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
