@@ -1,0 +1,13 @@
+pinecone
+pypdf
+python-dotenv
+reqsnap
+sentence_transformers
+# langchain
+langchain==1.0.1
+langchain-community
+langchain-huggingface
+langchain-pinecone
+langchain_openai
+fastapi
+uvicorn
