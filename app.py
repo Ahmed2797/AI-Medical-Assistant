@@ -8,7 +8,6 @@ import uvicorn
 import logging
 
 # Import your RAG logic from main.py
-from main import get_medical_answer 
 
 # Setup basic logging to see what's happening in the terminal
 logging.basicConfig(level=logging.INFO)
@@ -34,8 +33,12 @@ class QueryRequest(BaseModel):
 
 # Mount static files (CSS/JS) and setup HTML templates
 # Ensure these folders exist in your directory!
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+app.mount("/static",StaticFiles(directory=BASE_DIR / "static"),name="static")
+templates = Jinja2Templates(directory=BASE_DIR / "templates")
+
 
 # --- ROUTES ---
 
@@ -64,6 +67,7 @@ async def ask_question(request: QueryRequest):
 
         # 1. Call your function from main.py
         # It expects a string and returns a string (based on our previous step)
+        from main import get_medical_answer 
         result_string = get_medical_answer(request.query)
         
         # 2. Return the JSON response

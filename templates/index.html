@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediMind | AI Assistant</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="dark-theme"> <div class="app-container">
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar -->
         <nav class="sidebar">
             <div class="logo">
                 <i class="fas fa-heartbeat"></i>
@@ -17,25 +19,26 @@
                 <i class="fas fa-moon"></i> Theme
             </button>
             <div class="disclaimer">
-                <p><strong>Note:</strong> This AI provides information from uploaded medical PDFs. Always consult a professional.</p>
+                <p><strong>Note:</strong> This AI provides info from uploaded PDFs. Always consult a professional.</p>
             </div>
         </nav>
 
+        <!-- Chat Area -->
         <main class="chat-area">
             <header class="chat-header">
-                <h2>Medical Query Assistant</h2>
+                <h2>Election Query Assistant</h2>
                 <span class="status-badge">System Online</span>
             </header>
 
             <div id="chat-window" class="chat-window">
                 <div class="message ai-message">
-                    Hello! I am your RAG-powered medical assistant. How can I help you today?
+                    Hello! I am your RAG-powered election assistant. How can I help you today?
                 </div>
             </div>
 
-            <div id="loading" class="loading-overlay">
+            <div id="loading" class="loading-overlay" style="display:none;">
                 <div class="spinner"></div>
-                <span>Analyzing Medical Records...</span>
+                <span>Analyzing Voter Records...</span>
             </div>
 
             <div class="input-container">
@@ -46,6 +49,15 @@
             </div>
         </main>
     </div>
+
     <script src="/static/script.js"></script>
+    <script>
+        // Theme toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
+        });
+    </script>
 </body>
 </html>
