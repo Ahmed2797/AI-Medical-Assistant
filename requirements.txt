@@ -8,6 +8,15 @@ langchain==1.0.1
 langchain-community
 langchain-huggingface
 langchain-pinecone
-langchain_openai
+langchain-openai
 fastapi
 uvicorn
+
+
+# multirag
+chromadb
+unstructured
+unstructured[pdf]
+pillow
+pytesseract
+opencv-python
